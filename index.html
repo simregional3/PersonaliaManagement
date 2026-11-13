@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0b5fa5">
+  <title>PERSONALIA MANAGEMENT SYSTEM | REGIONAL 3</title>
+  <meta name="description" content="Personalia Management System - Regional 3">
+  <link rel="icon" type="image/png" sizes="512x512" href="assets/favicon.png">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="apple-touch-icon" href="assets/favicon.png">
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; min-height: 100vh; display: grid; place-items: center;
+      padding: 24px; font-family: Inter, Segoe UI, Arial, sans-serif;
+      color: #17324d;
+      background: radial-gradient(circle at top right, #eaf5ff 0, transparent 38%),
+                  linear-gradient(135deg, #f7fbff, #e8f1fa);
+    }
+    .panel {
+      width: min(100%, 520px); text-align: center; padding: 42px 32px;
+      background: rgba(255,255,255,.94); border: 1px solid #d9e8f5;
+      border-radius: 24px; box-shadow: 0 18px 55px rgba(20,70,110,.12);
+    }
+    .logo { width: 112px; height: 112px; object-fit: contain; margin-bottom: 18px; }
+    .eyebrow { color: #1685bd; font-size: 12px; font-weight: 800; letter-spacing: 2px; }
+    h1 { margin: 10px 0 8px; font-size: clamp(22px, 5vw, 30px); line-height: 1.2; }
+    p { color: #61758a; line-height: 1.6; margin: 0 auto 24px; max-width: 390px; }
+    .button {
+      display: inline-block; padding: 14px 25px; border-radius: 12px;
+      background: linear-gradient(135deg, #087fc0, #1556a5); color: white;
+      text-decoration: none; font-weight: 800; box-shadow: 0 8px 20px rgba(12,103,174,.22);
+    }
+    .button:hover { filter: brightness(1.06); transform: translateY(-1px); }
+    .note { font-size: 12px; margin-top: 20px; color: #8a9aab; }
+  </style>
+</head>
+<body>
+  <main class="panel">
+    <img class="logo" src="assets/simgroup-logo.png" alt="Logo SIMGroup">
+    <div class="eyebrow">REGIONAL 3</div>
+    <h1>PERSONALIA MANAGEMENT SYSTEM</h1>
+    <p>Portal akses sistem manajemen personalia Regional 3.</p>
+    <a class="button" id="openApp" href="#">BUKA APLIKASI</a>
+    <div class="note">Menghubungkan ke aplikasi Personalia Regional 3</div>
+  </main>
+
+  <script>
+    // GANTI URL DI BAWAH INI dengan URL Web App Google Apps Script milik Anda.
+    const APP_URL = "PASTE_URL_WEB_APP_GOOGLE_APPS_SCRIPT_DI_SINI";
+
+    const button = document.getElementById("openApp");
+    if (APP_URL.startsWith("https://")) {
+      button.href = APP_URL;
+      // Otomatis arahkan ke aplikasi setelah halaman terbuka.
+      window.setTimeout(() => { window.location.replace(APP_URL); }, 1800);
+    } else {
+      button.addEventListener("click", (event) => {
+        event.preventDefault();
+        alert("URL Google Apps Script belum diisi. Edit nilai APP_URL di file index.html.");
+      });
+    }
+  </script>
+</body>
+</html>
