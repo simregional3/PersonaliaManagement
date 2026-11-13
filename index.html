@@ -46,21 +46,10 @@
     <div class="note">Menghubungkan ke aplikasi Personalia Regional 3</div>
   </main>
 
-  <script>
-    // GANTI URL DI BAWAH INI dengan URL Web App Google Apps Script milik Anda.
-    const APP_URL = "https://script.google.com/macros/s/AKfycbw8FcZ74Nk1ygsjldnQ1rFRzcnDM5Ud5Fp5MIPYGGMGwFdx_g-WrX_sQCn7qbqx-Hk2/exec";
+  
+<script>
+  const APP_URL = "https://script.google.com/macros/s/AKfycbw8FcZ74Nk1ygsjldnQ1rFRzcnDM5Ud5Fp5MIPYGGMGwFdx_g-WrX_sQCn7qbqx-Hk2/exec";
 
-    const button = document.getElementById("openApp");
-    if (APP_URL.startsWith("https://")) {
-      button.href = APP_URL;
-      // Otomatis arahkan ke aplikasi setelah halaman terbuka.
-      window.setTimeout(() => { window.location.replace(APP_URL); }, 1800);
-    } else {
-      button.addEventListener("click", (event) => {
-        event.preventDefault();
-        alert("URL Google Apps Script belum diisi. Edit nilai APP_URL di file index.html.");
-      });
-    }
-  </script>
-</body>
-</html>
+  // Langsung masuk ke aplikasi Personalia Regional 3
+  window.location.replace(APP_URL);
+</script>
